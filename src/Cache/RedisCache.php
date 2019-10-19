@@ -55,7 +55,6 @@ class RedisCache implements CacheInterface
         if (is_null($redis)) {
 
             $configuration = Configuration::getInstance();
-            var_dump($configuration->redis_cache_location);
 
             $this->redis = new \Redis();
             $this->redis->connect($configuration->redis_cache_location);

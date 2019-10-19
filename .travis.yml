@@ -1,21 +1,15 @@
 language: php
 
 php:
-  - 7.1
   - 7.2
+  - 7.3
 
 before_script:
   - echo "extension = memcached.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - pecl install redis
   - travis_retry composer self-update
   - travis_retry composer install
 
-notifications:
-  on_success: never
-  on_failure: always
-
-addons:
-  code_climate:
-    repo_token: $CODE_CLIMATE_TOKEN
 
 script:
   - vendor/bin/phpunit --verbose --coverage-clover build/logs/clover.xml
