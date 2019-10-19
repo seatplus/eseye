@@ -22,7 +22,6 @@
 
 namespace Seat\Eseye\Cache;
 
-use Predis\Client;
 use Seat\Eseye\Configuration;
 use Seat\Eseye\Containers\EsiResponse;
 
