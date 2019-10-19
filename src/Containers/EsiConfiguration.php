@@ -1,13 +1,15 @@
 <?php
 
 /*
- * This file is part of SeAT
+ * This file is part of Fork seatplus/eseye
+ * Copyright (C) 2019 Felix Huber
  *
- * Copyright (C) 2015, 2016, 2017, 2018, 2019  Leon Jacobs
+ * This file incorporates work covered by the following copyright and permission notice:
+ * Copyright (C) 2015, 2016, 2017  Leon Jacobs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -73,7 +75,7 @@ class EsiConfiguration extends AbstractArrayAccess
         'file_cache_location'        => 'cache/',
 
         // Redis Cache
-        'redis_cache_location'       => 'tcp://127.0.0.1',
+        'redis_cache_location'       => '127.0.0.1',
         'redis_cache_prefix'         => 'eseye:',
 
         // Memcached Cache

@@ -36,18 +36,18 @@ class RedisCache implements CacheInterface
     use HashesStrings;
 
     /**
-     * @var \Predis\Client
+     * @var \Redis
      */
     protected $redis;
 
     /**
      * RedisCache constructor.
      *
-     * @param \Predis\Client $redis
+     * @param \Redis $redis
      *
      * @throws \Seat\Eseye\Exceptions\InvalidContainerDataException
      */
-    public function __construct(Client $redis = null)
+    public function __construct(\Redis $redis = null)
     {
 
         // If we didn't get a Redis instance in the constructor,
@@ -55,10 +55,11 @@ class RedisCache implements CacheInterface
         if (is_null($redis)) {
 
             $configuration = Configuration::getInstance();
+            var_dump($configuration->redis_cache_location);
 
-            $this->redis = new Client($configuration->redis_cache_location, [
-                'prefix' => $configuration->redis_cache_prefix,
-            ]);
+            $this->redis = new \Redis();
+            $this->redis->connect($configuration->redis_cache_location);
+            $this->redis->setOption(\Redis::OPT_PREFIX, $configuration->redis_cache_prefix);
 
             return;
         }
