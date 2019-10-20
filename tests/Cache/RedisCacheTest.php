@@ -1,13 +1,15 @@
 <?php
 
 /*
- * This file is part of SeAT
+ * This file is part of Fork seatplus/eseye
+ * Copyright (C) 2019 Felix Huber
  *
+ * This file incorporates work covered by the following copyright and permission notice:
  * Copyright (C) 2015, 2016, 2017  Leon Jacobs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -20,7 +22,6 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-use Predis\Client;
 use Seat\Eseye\Cache\RedisCache;
 use Seat\Eseye\Containers\EsiResponse;
 
@@ -36,8 +37,7 @@ class RedisCacheTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-
-        $redis = $this->createMock(Client::class);
+        $redis = $this->createMock(Redis::class);
 
         // Set the cache
         $this->redis_cache = new RedisCache($redis);

@@ -1,13 +1,15 @@
 <?php
 
 /*
- * This file is part of SeAT
+ * This file is part of Fork seatplus/eseye
+ * Copyright (C) 2019 Felix Huber
  *
- * Copyright (C) 2015, 2016, 2017, 2018, 2019  Leon Jacobs
+ * This file incorporates work covered by the following copyright and permission notice:
+ * Copyright (C) 2015, 2016, 2017  Leon Jacobs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -52,7 +54,7 @@ class FileLogger implements LogInterface
         $formatter = new LineFormatter("[%datetime%] %channel%.%level_name%: %message%\n");
         $stream = new StreamHandler(
             rtrim($configuration->logfile_location, '/') . '/eseye.log',
-            $configuration->logger_level
+            (int) $configuration->logger_level
         );
         $stream->setFormatter($formatter);
 
@@ -68,7 +70,7 @@ class FileLogger implements LogInterface
     public function log(string $message)
     {
 
-        $this->logger->addInfo($message);
+        $this->logger->info($message);
     }
 
     /**
@@ -79,7 +81,7 @@ class FileLogger implements LogInterface
     public function debug(string $message)
     {
 
-        $this->logger->addDebug($message);
+        $this->logger->debug($message);
     }
 
     /**
@@ -90,7 +92,7 @@ class FileLogger implements LogInterface
     public function warning(string $message)
     {
 
-        $this->logger->addWarning($message);
+        $this->logger->warning($message);
     }
 
     /**
@@ -101,6 +103,6 @@ class FileLogger implements LogInterface
     public function error(string $message)
     {
 
-        $this->logger->addError($message);
+        $this->logger->error($message);
     }
 }

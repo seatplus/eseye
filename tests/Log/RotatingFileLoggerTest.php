@@ -57,15 +57,6 @@ class RotatingFileLoggerTest extends PHPUnit_Framework_TestCase
         $this->assertContains('eseye.INFO: foo', $logfile_content);
     }
 
-    public function testFileLoggerSkipWritesLogDebugWithoutRequiredLevel()
-    {
-
-        $this->logger->debug('foo');
-        $logfile_content = $this->root->getChild($this->logfile_name);
-
-        $this->assertNull($logfile_content);
-    }
-
     public function testFileLoggerWritesLogDebug()
     {
 
