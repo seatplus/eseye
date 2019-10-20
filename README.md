@@ -7,10 +7,11 @@
 [![Total Downloads](https://poser.pugx.org/eveseat/eseye/downloads)](https://packagist.org/packages/eveseat/eseye)
 [![Latest Unstable Version](https://poser.pugx.org/eveseat/eseye/v/unstable)](https://packagist.org/packages/eveseat/eseye)
 [![License](https://poser.pugx.org/eveseat/eseye/license)](https://packagist.org/packages/eseye/eveapi)
-[![StyleCI](https://styleci.io/repos/78866259/shield?branch=master)](https://styleci.io/repos/78866259)
+[![StyleCI](https://github.styleci.io/repos/216053626/shield?branch=master)](https://github.styleci.io/repos/216053626)
+
 
 # eseye
-👾 A Standalone, Dynamic ESI (EVE Swagger Interface) Client Library written in PHP
+🛰️🛰️🛰️ A fork of eveseat/eseye: A Standalone PHP ESI (EVE Swagger Interface) Client Library. Supports Monolog ^2.0 and php redis
 
 ## example usage
 Its supposed to be simple!
