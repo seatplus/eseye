@@ -36,7 +36,7 @@ function redirect_to_new()
 {
 
     header('Location: ' . $_SERVER['PHP_SELF'] . '?action=new');
-    die();
+    exit();
 }
 
 /**
@@ -333,7 +333,7 @@ switch ($_GET['action']) {
             echo 'All fields are mandatory!<br>' . PHP_EOL;
             echo '<a href="' . $_SERVER['PHP_SELF'] . '?action=new">Start again</a>';
 
-            die();
+            exit();
         }
 
         $_SESSION['clientid'] = $_REQUEST['clientid'];
@@ -355,7 +355,7 @@ switch ($_GET['action']) {
 
             echo 'Invalid State! You will have to start again!<br>';
             echo '<a href="' . $_SERVER['PHP_SELF'] . '?action=new">Start again</a>';
-            die();
+            exit();
         }
 
         // Clear the state value.
@@ -376,15 +376,15 @@ switch ($_GET['action']) {
         // Start a cURL session
         $ch = curl_init('https://login.eveonline.com/oauth/token');
         curl_setopt_array($ch, [
-                CURLOPT_URL             => 'https://login.eveonline.com/oauth/token',
-                CURLOPT_POST            => true,
-                CURLOPT_POSTFIELDS      => $fields,
-                CURLOPT_HTTPHEADER      => $headers,
-                CURLOPT_RETURNTRANSFER  => true,
-                CURLOPT_USERAGENT       => 'eseye/tokengenerator',
-                CURLOPT_SSL_VERIFYPEER  => true,
-                CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
-            ]
+            CURLOPT_URL             => 'https://login.eveonline.com/oauth/token',
+            CURLOPT_POST            => true,
+            CURLOPT_POSTFIELDS      => $fields,
+            CURLOPT_HTTPHEADER      => $headers,
+            CURLOPT_RETURNTRANSFER  => true,
+            CURLOPT_USERAGENT       => 'eseye/tokengenerator',
+            CURLOPT_SSL_VERIFYPEER  => true,
+            CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
+        ]
         );
 
         $result = curl_exec($ch);
