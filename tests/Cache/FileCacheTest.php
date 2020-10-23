@@ -25,14 +25,14 @@ use Seat\Eseye\Cache\FileCache;
 use Seat\Eseye\Configuration;
 use Seat\Eseye\Exceptions\CachePathException;
 
-class FileCacheTest extends PHPUnit_Framework_TestCase
+class FileCacheTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $root;
 
     protected $file_cache;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         // Set the file cache path in the config singleton

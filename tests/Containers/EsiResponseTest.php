@@ -22,14 +22,14 @@
 
 use Seat\Eseye\Containers\EsiResponse;
 
-class EsiResponseTest extends PHPUnit_Framework_TestCase
+class EsiResponseTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $esi_response;
 
     protected $headers;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         // Sample data to work with

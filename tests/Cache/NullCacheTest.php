@@ -23,12 +23,12 @@
 use Seat\Eseye\Cache\NullCache;
 use Seat\Eseye\Containers\EsiResponse;
 
-class NullCacheTest extends PHPUnit_Framework_TestCase
+class NullCacheTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $null_cache;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         $this->null_cache = new NullCache;

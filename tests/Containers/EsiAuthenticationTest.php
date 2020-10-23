@@ -23,12 +23,12 @@
 use Seat\Eseye\Containers\EsiAuthentication;
 use Seat\Eseye\Exceptions\InvalidContainerDataException;
 
-class EsiAuthenticationTest extends PHPUnit_Framework_TestCase
+class EsiAuthenticationTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $esi_authentication;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         $this->esi_authentication = new EsiAuthentication;

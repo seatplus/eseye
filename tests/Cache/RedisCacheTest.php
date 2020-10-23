@@ -25,7 +25,7 @@
 use Seat\Eseye\Cache\RedisCache;
 use Seat\Eseye\Containers\EsiResponse;
 
-class RedisCacheTest extends PHPUnit_Framework_TestCase
+class RedisCacheTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -35,7 +35,7 @@ class RedisCacheTest extends PHPUnit_Framework_TestCase
 
     protected $esi_response_object;
 
-    public function setUp()
+    public function setUp() : void
     {
         $redis = $this->createMock(Redis::class);
 

@@ -23,7 +23,7 @@
 use Seat\Eseye\Containers\EsiResponse;
 use Seat\Eseye\Exceptions\RequestFailedException;
 
-class RequestFailedExceptionTest extends PHPUnit_Framework_TestCase
+class RequestFailedExceptionTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -31,7 +31,7 @@ class RequestFailedExceptionTest extends PHPUnit_Framework_TestCase
      */
     protected $exception;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         $this->exception = new RequestFailedException(new Exception('Foo'), new EsiResponse(

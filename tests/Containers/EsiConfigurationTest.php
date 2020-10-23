@@ -26,12 +26,12 @@ use Seat\Eseye\Exceptions\InvalidContainerDataException;
 /**
  * Class EsiConfigurationTest
  */
-class EsiConfigurationTest extends \PHPUnit_Framework_TestCase
+class EsiConfigurationTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $esi_configuration;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         $this->esi_configuration = new EsiConfiguration;

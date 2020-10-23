@@ -26,7 +26,7 @@ use Seat\Eseye\Containers\EsiConfiguration;
 use Seat\Eseye\Exceptions\InvalidContainerDataException;
 use Seat\Eseye\Log\LogInterface;
 
-class ConfigurationTest extends PHPUnit_Framework_TestCase
+class ConfigurationTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testConfigurationInstantiation()

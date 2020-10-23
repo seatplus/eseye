@@ -24,12 +24,12 @@ use Seat\Eseye\Access\CheckAccess;
 use Seat\Eseye\Configuration;
 use Seat\Eseye\Log\NullLogger;
 
-class CheckAccessTest extends PHPUnit_Framework_TestCase
+class CheckAccessTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $check_access;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         $this->check_access = new CheckAccess;

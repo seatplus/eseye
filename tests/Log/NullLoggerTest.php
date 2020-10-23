@@ -22,12 +22,12 @@
 
 use Seat\Eseye\Log\NullLogger;
 
-class NullLoggerTest extends PHPUnit_Framework_TestCase
+class NullLoggerTest extends \PHPUnit\Framework\TestCase
 {
 
     protected $logger;
 
-    public function setUp()
+    public function setUp() : void
     {
 
 

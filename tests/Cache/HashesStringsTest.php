@@ -22,7 +22,7 @@
 
 use Seat\Eseye\Cache\HashesStrings;
 
-class HashesStringsTest extends PHPUnit_Framework_TestCase
+class HashesStringsTest extends \PHPUnit\Framework\TestCase
 {
 
     use HashesStrings;

@@ -33,7 +33,7 @@ use Seat\Eseye\Exceptions\RequestFailedException;
 use Seat\Eseye\Fetchers\GuzzleFetcher;
 use Seat\Eseye\Log\NullLogger;
 
-class GuzzleFetcherTest extends PHPUnit_Framework_TestCase
+class GuzzleFetcherTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -41,7 +41,7 @@ class GuzzleFetcherTest extends PHPUnit_Framework_TestCase
      */
     protected $fetcher;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         // Remove logging

@@ -39,7 +39,7 @@ use Seat\Eseye\Fetchers\FetcherInterface;
 use Seat\Eseye\Fetchers\GuzzleFetcher;
 use Seat\Eseye\Log\LogInterface;
 
-class EseyeTest extends PHPUnit_Framework_TestCase
+class EseyeTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
@@ -47,7 +47,7 @@ class EseyeTest extends PHPUnit_Framework_TestCase
      */
     protected $esi;
 
-    public function setUp()
+    public function setUp() : void
     {
 
         // Remove logging
@@ -85,7 +85,10 @@ class EseyeTest extends PHPUnit_Framework_TestCase
             'secret'        => 'SSO_SECRET',
             'refresh_token' => 'CHARACTER_REFRESH_TOKEN',
         ]);
-        new Eseye($authentication);
+
+        $eseye = new Eseye($authentication);
+
+        $this->assertTrue($eseye instanceof Eseye);
     }
 
     public function testEseyeSetNewInvalidAuthenticationData()
@@ -111,7 +114,10 @@ class EseyeTest extends PHPUnit_Framework_TestCase
             'token_expires' => '1970-01-01 00:00:00',
             'scopes'        => ['public'],
         ]);
-        $this->esi->setAuthentication($authentication);
+
+        $eseye = $this->esi->setAuthentication($authentication);
+
+        $this->assertTrue($eseye instanceof Eseye);
     }
 
     public function testEseyeGetAuthenticationBeforeSet()
